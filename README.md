@@ -14,12 +14,19 @@
 5. Делаем POST запрос посредством конструкции Webhook* через робот, или бизнес-процессом: https://yourdomain.com/path/duplicate.php?lead=123&phone=7900XXXXXXX&email=test@test.ru&commentLead=Комментарий лида
 
 **Переменные передаваемые в POST запросе:**
+
 yourdomain.com - URL хостинга с поддержкой SSL.
+
 path - путь до скрипта.
+
 lead - ID нового лида.
+
 phone - телефон в новом лиде.
+
 email - почта в новом лиде.
+
 commentLead - комментарий в новом лиде.
+
 
 
 *Подробнее о действии Webhook можно почитать тут: https://dev.1c-bitrix.ru/learning/course/index.php?COURSE_ID=57&LESSON_ID=8551
