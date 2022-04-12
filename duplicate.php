@@ -32,9 +32,6 @@ $leadinfo = executeREST(
 while($kryt == 'Y'){
 $mainlead = $leadinfo['result']['LEAD'][$countforlead];
 
-
-writeToLog($mainlead, 'mainleadFromPhone');
-
 if (!empty($mainlead)) {
     $getlead = executeREST(
         'crm.lead.get',
@@ -77,8 +74,6 @@ if($leadwasfound == 'N') {
     while($kryt == 'Y'){
     $mainlead = $leadinfo['result']['LEAD'][$countforlead];
     
-    writeToLog($mainlead, 'mainleadFromEmail');
-    
     if (!empty($mainlead)) {
 
         $getlead = executeREST(
@@ -115,7 +110,6 @@ if($leadwasfound == 'N') {
     
     }
 }else{
-    writeToLog('Lead was found');
     
 }
 
@@ -124,7 +118,7 @@ $date2 = new DateTime($dateCreate);
 $difference_in_seconds = $date1->format('U') - $date2->format('U');
 
 $difference_in_seconds = $difference_in_seconds / 60 / 60;
-writeToLog($difference_in_seconds);
+
 
 if($leadwasfound == 'Y' and $difference_in_seconds < 1) {
         $updatelead = executeREST(
@@ -159,7 +153,6 @@ if($leadwasfound == 'Y' and $difference_in_seconds < 1) {
                     ),
                 ),
 $domain, $auth, $user);
-writeToLog('taskadd');
 }
 
 if(!empty($phone)){
